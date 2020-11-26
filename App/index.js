@@ -78,14 +78,15 @@ class ChartWeb extends Component {
         
         return (
           <View style={this.props.style}>
-              <WebView
+                <WebView
 			  	  originWhitelist={["file://"]}
                   onLayout={this.reRenderWebView}
                   style={styles.full}
                   source={{ html: concatHTML, baseUrl: 'web/' }}
                   javaScriptEnabled={true}
                   domStorageEnabled={true}
-                  scalesPageToFit={true}
+                  scalesPageToFit={undefined}
+                  useWebKit={true}
                   scrollEnabled={false}
                   automaticallyAdjustContentInsets={true}
                   {...this.props}
